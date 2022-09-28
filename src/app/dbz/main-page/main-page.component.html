@@ -4,17 +4,24 @@
 
 <div class="row">
     <div class="col" >
-        <h3>Characters</h3>
+
+        <app-characters [charactersData]="characters">       
+        </app-characters>
+        <!-- <h3>Characters</h3>
         <hr>
         <ul>
             <li *ngFor="let character of characters">
                 {{character.name}} -  {{character.power | number }}
             </li>
-        </ul>
+        </ul> -->
     </div>
 
     <div class="col">
-        <h3>Add Character <small> {{ new.name }} </small></h3>
+        <app-add-character 
+        [new]="new"
+        (onNewCharacter)="addNewCharacter( $event )">
+        </app-add-character>
+        <!-- <h3>Add Character <small> {{ new.name }} </small></h3>
         <hr>
 
         <form (ngSubmit)="add()">
@@ -35,7 +42,7 @@
             <button type="submit">
                 Add
             </button>
-        </form>
+        </form> -->
     </div>
 
 </div>
